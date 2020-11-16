@@ -2,6 +2,8 @@ package sn.simplon.senforage.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -30,8 +32,8 @@ public class PharmacieController {
 	}
 	
 	//create pharmacie
-	@PostMapping(  "/pharmacies")
-	public Pharmacie createPharmacie( @RequestBody Pharmacie pharmacie) {
+	@PostMapping("/pharmacies")
+	public Pharmacie createPharmacie(@Valid @RequestBody Pharmacie pharmacie) {
 		return pharmacieRepository.save(pharmacie);
 	}
 	
